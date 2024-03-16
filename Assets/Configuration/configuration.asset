@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b5f1c9b91c8e84198040f81fc6dec5, type: 3}
+  m_Name: configuration
+  m_EditorClassIdentifier: 
+  ball: {fileID: 3322098889254500439, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
+  basket: {fileID: 7945600921338099555, guid: 327f1adb24e674943aba21c0b05e0fa9, type: 3}
+  spawnBall: {fileID: 890656170792153416, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
+  spawnBasket: {fileID: 1152611029606400743, guid: 327f1adb24e674943aba21c0b05e0fa9, type: 3}
+  rd: {fileID: 8526471320646021478, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
+  throwForce: 60
+  startThrowZ: {x: 0, y: 0, z: 0}
+  endThrowZ: {x: 0, y: 0, z: 100}
+  isThrow: 0
+  "goal\u0421ounter": 0
+  particle: {fileID: 4279892381246810024, guid: 3ac3a62b015163e4c80d991b780f22e2, type: 3}
