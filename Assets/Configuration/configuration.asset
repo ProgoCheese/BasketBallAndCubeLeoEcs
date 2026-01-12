@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 3322098889254500439, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
   basket: {fileID: 7945600921338099555, guid: 327f1adb24e674943aba21c0b05e0fa9, type: 3}
-  spawnBall: {fileID: 890656170792153416, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
+  spawnBall:
+  - {fileID: 890656170792153416, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
+  - {fileID: 1430404054756923343, guid: 744916a01cf82434289a271fb94c4cd9, type: 3}
+  - {fileID: 3191087703371574131, guid: 56bad1dabfc9d9e42b7862985d99dcdd, type: 3}
+  - {fileID: 1584584522718168868, guid: 5efdbf196a53c2a45ac025f09c8b6b6d, type: 3}
+  spawnPoint:
+  - {fileID: 5226200312947517327, guid: d9ab8f807e93f2c4481e4281d212f7a7, type: 3}
+  - {fileID: 4464903122612266436, guid: 1ccfba8f2e11b2641a97985946909124, type: 3}
+  - {fileID: 6988225937781616468, guid: 490c880b78a053941a58938e2382c2d4, type: 3}
+  - {fileID: 651959535971999734, guid: 4cf7836ce199a6245b923cb0967b42cd, type: 3}
+  needThrowNextLevel: 010000000200000003000000
+  needTime:
+  - 0
+  - 30
+  - 30
+  - 30
   spawnBasket: {fileID: 1152611029606400743, guid: 327f1adb24e674943aba21c0b05e0fa9, type: 3}
   rd: {fileID: 8526471320646021478, guid: 30f92eded936d3f46b3d54a14173b4c1, type: 3}
   throwForce: 60
@@ -23,3 +38,5 @@ MonoBehaviour:
   isThrow: 0
   "goal\u0421ounter": 0
   particle: {fileID: 4279892381246810024, guid: 3ac3a62b015163e4c80d991b780f22e2, type: 3}
+  LevelGame: 0
+  camera: {fileID: 0}

@@ -28,31 +28,29 @@ namespace BasketBall
                     {
                         if (collider.tag == "Backet")
                         {
-                            //inputData.rb.useGravity = false;
-                            inputData.transform.position = _configuration.spawnBall.transform.position;
                             _configuration.goal—ounter += 1;
+
+                            if(_configuration.goal—ounter >= _configuration.needThrowNextLevel[_configuration.LevelGame] && _configuration.LevelGame < _configuration.needThrowNextLevel.Length)
+                            {
+                                _configuration.LevelGame++;
+                                _configuration.goal—ounter = 0;
+                            }
+
+                            //inputData.rb.useGravity = false;
+                            inputData.transform.position = _configuration.spawnBall[_configuration.LevelGame].transform.position;
                             moveData.rb.useGravity = false;
                             moveData.rb.isKinematic = true;
                             moveData.rb.isKinematic = false;
                             ball.Del<ThrowTag>();
 
-                           // Debug.Log("œÓÔ‡Î");
+                            // Debug.Log("œÓÔ‡Î");
 
-                            GameObject particle = new GameObject("Particle");
-                            particle.transform.position = _configuration.spawnBasket.transform.position;
-                            ParticleSystem particleSystem = particle.AddComponent<ParticleSystem>();
-                            var mainModule = particleSystem.main;
-                            mainModule.startLifetime = 1f;
-                            mainModule.startSpeed = 5f;
-                            mainModule.startSize = 0.5f;
-                            mainModule.startColor = Color.yellow;
-                            particleSystem.Play();
-                            GameObject.Destroy(particle, 2f);
+                            CreatePartikl();
                         }
                         else if (collider.tag == "Wall")
                         {
                             Debug.Log("ÏËÏÓ");
-                            inputData.transform.position = _configuration.spawnBall.transform.position;
+                            inputData.transform.position = _configuration.spawnBall[_configuration.LevelGame].transform.position;
                             ball.Del<ThrowTag>();
                             moveData.rb.useGravity = false;
                             moveData.rb.isKinematic = true;
@@ -63,6 +61,20 @@ namespace BasketBall
 
 
             }
+        }
+
+        private void CreatePartikl()
+        {
+            GameObject particle = new GameObject("Particle");
+            particle.transform.position = _configuration.spawnBasket.transform.position;
+            ParticleSystem particleSystem = particle.AddComponent<ParticleSystem>();
+            var mainModule = particleSystem.main;
+            mainModule.startLifetime = 1f;
+            mainModule.startSpeed = 5f;
+            mainModule.startSize = 0.5f;
+            mainModule.startColor = Color.yellow;
+            particleSystem.Play();
+            GameObject.Destroy(particle, 2f);
         }
     }
 }

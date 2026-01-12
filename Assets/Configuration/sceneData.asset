@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e2ce1a74579474d815e21ed7f497ef, type: 3}
   m_Name: sceneData
   m_EditorClassIdentifier: 
+  numberLevel: 1
   CellMaterial:
   - {fileID: 2100000, guid: dd01ec3e7608281458df5557b02d6281, type: 2}
   - {fileID: 2100000, guid: b4cd103eb027f1844945b89fc1e6368b, type: 2}
@@ -21,5 +22,6 @@ MonoBehaviour:
   spawnTransform: {fileID: 112215514868956295, guid: a90c0f50733685b4d861cecb281a0c4d, type: 3}
   length: 6
   speedBox: 4
-  inputStateGame: 1
-  CoinCounter: 0
+  inputStateGame: 2
+  CoinCounter: 501
+  TimerLeft: 15

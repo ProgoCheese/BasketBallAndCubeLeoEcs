@@ -2,29 +2,19 @@ using UnityEngine;
 
 namespace BasketBall
 {
+    /// <summary>
+    /// кубик
+    /// </summary>
     [CreateAssetMenu]
     public class SceneData : ScriptableObject
     {
-        public int[,] Field = {
-            {0,0,1,2,0,0 },
-            {0,0,1,1,0,0 },
-            {2,1,3,1,1,1 },
-            {1,1,1,3,1,2 },
-            {0,0,1,1,0,0 },
-            {0,0,2,2,0,0 }};
+        public int[,] Field;
+
+        public int numberLevel;
+
+        public CubeLevel[] cubeLevel;
 
         public Material[] CellMaterial;
-
-        /* public int[,] Field = {
-            {0,0,0,1,1,1,0,0,0 },
-            {0,0,0,1,1,1,0,0,0 },
-            {0,0,0,1,1,1,0,0,0 },
-            {1,1,1,1,1,1,1,1,1 },
-            {1,1,1,1,1,1,1,1,1 },
-            {1,1,1,1,1,1,1,1,1 },
-            {0,0,0,1,1,1,0,0,0 },
-            {0,0,0,1,1,1,0,0,0 },
-            {0,0,0,1,1,1,0,0,0 },}; */
 
         public GameObject cubeFloor;
 
@@ -39,5 +29,7 @@ namespace BasketBall
         public InputStateGame inputStateGame;
 
         public int CoinCounter = 0;
+
+        public float TimerLeft;
     }
 }

@@ -1,8 +1,7 @@
 using Leopotam.Ecs;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.UI;
 
 namespace BasketBall
 {
@@ -12,12 +11,22 @@ namespace BasketBall
         EcsSystems _systems;
 
         public SceneData SceneData;
+        public Text gameHUDText;
+        public Image timerBg;
 
         // Start is called before the first frame update
         void Start()
         {
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
+
+            var entity = _world.NewEntity();
+            entity.Get<DisplayTextComponent>();
+            entity.Get<TextComponent>().value = gameHUDText;
+
+            var timerEntity = _world.NewEntity();
+            timerEntity.Get<TimerBgComponent>().bg = timerBg;
+            timerEntity.Get<TimerBgComponent>().timerBg = SceneData.TimerLeft;
 
             _systems
                 .Add(new InitFieldSystem())
@@ -31,6 +40,9 @@ namespace BasketBall
                 .Add(new InputLeftGameFieldSystem())
                 .Add(new InputBottomGameFieldSystem())
                 .Add(new CheckBoxColliderSystem())
+                .Add(new UpdateTextCubeSystem())
+                .Add(new TimerUpdateSystem())
+                .Inject(new TextComponent { value = gameHUDText })
                 .Inject(SceneData)
                 .Init();
 
@@ -52,5 +64,21 @@ namespace BasketBall
                 _world = null;
             }
         }
+    }
+
+    [Serializable]
+    public class CubeLevelData
+    {
+        public string name;
+
+        public int[] gameField;
+
+        public int length;
+    }
+
+    public class CubeLevel
+    {
+        public string name;
+        public int[,] field;
     }
 }

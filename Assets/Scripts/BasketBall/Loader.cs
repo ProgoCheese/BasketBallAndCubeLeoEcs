@@ -16,6 +16,7 @@ namespace BasketBall
         public Text gameHUDText;
         public Text gameTimerText;
         public float timerCount;
+        public Camera Camera;
 
         // Start is called before the first frame update
         void Start()
@@ -40,6 +41,7 @@ namespace BasketBall
                 .Add(new InputSystem())
                 .Add(new MovementSystem())
                 .Add(new CollisionDetectionSystem())
+                .Add(new SetCameraPosition())
                 //.Add(new GetNormalStateSystem())
                 .Add(new InputGameKeySystem())
                 .Add(new UpdateTextSystem())
@@ -52,6 +54,7 @@ namespace BasketBall
                 .Init();
 
             Configuration.goal—ounter = 0;
+            Configuration.camera = Camera;
         }
 
         // Update is called once per frame

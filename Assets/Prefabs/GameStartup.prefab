@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneData: {fileID: 11400000, guid: 6ad0da12c3c7d554d892039765284e19, type: 2}
+  gameHUDText: {fileID: 0}

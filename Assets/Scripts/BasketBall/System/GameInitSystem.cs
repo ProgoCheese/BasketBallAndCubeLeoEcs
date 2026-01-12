@@ -11,8 +11,10 @@ namespace BasketBall
 
         public void Init()
         {
+            _configuration.LevelGame = 0;
+
             GameObject ballGameObject = GameObject.Instantiate(_configuration.ball);
-            ballGameObject.transform.position = _configuration.spawnBall.position;
+            ballGameObject.transform.position = _configuration.spawnBall[0].position;
             Rigidbody rb = ballGameObject.GetComponent<Rigidbody>();
             Collider collider = ballGameObject.GetComponent<Collider>();
             Transform transform = ballGameObject.GetComponent<Transform>();

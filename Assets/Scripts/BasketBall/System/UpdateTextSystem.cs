@@ -15,7 +15,7 @@ namespace BasketBall
                 ref var textComponent = ref _filter.Get1(i);
                 ref var displayTextComponent = ref _filter.Get2(i);
 
-                displayTextComponent.text = "Счет: " + (_configuration.goalСounter % 1);
+                displayTextComponent.text = "Счет: " + _configuration.goalСounter.ToString();
                 //Debug.Log("asd");
                 textComponent.value.text = displayTextComponent.text;
             }
